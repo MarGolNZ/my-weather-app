@@ -1,0 +1,84 @@
+h1 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 500;
+  color: #0f3460;
+}
+h2,
+h4 {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 300;
+  margin-bottom: 50px;
+  color: #0f3460;
+}
+.content {
+  max-width: 850px;
+  margin: 20px auto;
+  padding: 30px;
+  border-radius: 10px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+}
+.degree-celcius {
+  text-align: end;
+  font-size: 64px;
+  height: 80px;
+  line-height: 100px;
+}
+a,
+.units {
+  font-size: 44px;
+  text-decoration: none;
+  vertical-align: top;
+}
+.celsius-link:hover {
+  text-decoration: underline;
+}
+.fahrenheit-link:hover {
+  text-decoration: underline;
+}
+.humidity {
+  line-height: 40px;
+  font-weight: 500;
+}
+.city-name {
+  margin-bottom: 0;
+}
+.card {
+  margin: -10px;
+}
+.card-body {
+  text-align: center;
+  background: #f1f9f9;
+  border-radius: 5px;
+  color: #0f3460;
+}
+.card-body:hover {
+  text-align: center;
+  background: #ffffff;
+  border-radius: 5px;
+  color: #0f3460;
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.fa-sun {
+  color: #fdb827;
+}
+.fa-cloud-sun,
+.fa-cloud-sun-rain,
+.fa-cloud-showers-heavy {
+  color: #0e49b5;
+}
+.emoji-weather {
+  color: #0e49b5;
+  text-align: end;
+  font-size: 84px;
+}
+.btn-lg {
+  transition: all 200ms ease;
+}
+.btn-lg:hover {
+  box-shadow: 5px 5px 5px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background-color: #0e49b5;
+  color: #fff;
+  border-color: #0e49b5;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://kit.fontawesome.com/f7b854fcea.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;500&display=swap" rel="stylesheet" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <form class="form-inline" id="city-search-again">
+                <div class="row">
+                    <div class="col-4">
+                        <input class="form-control form-control-lg" type="text" placeholder="Enter a city name"
+                            autocomplete="on" autofocus="on" id="city-input" />
+                    </div>
+
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-light btn-lg" id="find">Find</button>
+                    </div>
+
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-light btn-lg" id="current-location">Current Location</button>
+                    </div>
+
+                    <div class="col-2">
+                        <h1 class="emoji-weather"><i class="fas fa-cloud-sun"> </i></h1>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-sm-4">
+                    <h4 class="humidity">
+                        Precipitation: 
+                        <br />
+                        Wind: 
+                    </h4>
+                </div>
+
+                <div class="col-sm-3">
+                    <h1 class="city-name"></h1>
+                    <h2>
+                        <em id="current-time"></em>
+                        <br />
+                        
+                    </h2>
+                </div>
+
+                <div class="col-sm-5">
+                    <h1 class="degree-celcius">
+                        <span id="temperature"></span>
+                        <span class="units">
+                            <a href="#" class="celsius-link" id="celsius-link"> °C</a><span> | </span>
+                            <a href="#" class="fahrenheit-link" id="fahrenheit-link">°F</a></span>
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Tue</h2>
+                            <h1 class="emoji-sun"><i class="fas fa-sun"> </i></h1>
+                            <h3 class="temp">25°C</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Wed</h2>
+                            <h1 class="emoji-cloud-sun">
+                                <i class="fas fa-cloud-sun"> </i>
+                            </h1>
+                            <h3 class="temp">27°C</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Thu</h2>
+                            <h1 class="emojicloud-sun-rain">
+                                <i class="fas fa-cloud-sun-rain"></i>
+                            </h1>
+                            <h3 class="temp">24°C</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Fri</h2>
+                            <h1 class="emoji"><i class="fas fa-sun"> </i></h1>
+                            <h3 class="temp">28°C</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">Sat</h2>
+                            <h1 class="emoji-cloud-showers-heavy">
+                                <i class="fas fa-cloud-showers-heavy"></i>
+                            </h1>
+                            <h3 class="temp">21°C</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="src/index.js"></script>
+</body>
+
+</html>
