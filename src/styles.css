@@ -82,3 +82,10 @@ a,
   color: #fff;
   border-color: #0e49b5;
 }
+a.github-link {
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  max-width: 850px;
+  text-align: center;
+}
