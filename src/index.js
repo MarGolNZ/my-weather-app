@@ -36,12 +36,16 @@ function showWeather(response) {
     let wind = Math.round(response.data.current.wind_speed);
     let windElement = document.querySelector("#wind-value");
     let humidity = response.data.current.humidity;
-    let humidityElement = document.querySelector("#humidity-value")
+    let humidityElement = document.querySelector("#humidity-value");
+    let weatherIcon = response.data.current.weather[0].icon;
+    let weatherConditionElement = document.querySelector("#weather-icon");
     temperatureElement.innerHTML = temperature;
     console.log(response.data.timezone);
     cityNameDisplay.innerHTML = response.data.timezone;
     windElement.innerHTML = `${wind} m/s`;
     humidityElement.innerHTML = `${humidity} %`;
+    weatherConditionElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt=""/>`;
+
   }
 
 // function alertCity(event) {
