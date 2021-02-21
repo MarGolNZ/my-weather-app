@@ -15,113 +15,85 @@
 
 <body>
     <div class="container">
-        <div class="content">
-            <form class="form-inline" id="city-search-again">
-                <div class="row">
-                    <div class="col-4">
-                        <input class="form-control form-control-lg" type="text" placeholder="Enter a city name"
-                            autocomplete="on" autofocus="on" id="city-input" />
-                    </div>
+        <div class="content-wrapper">
+            <div class="content">
 
-                    <div class="col-2">
-                        <button type="submit" class="btn btn-light btn-lg" id="find">Find</button>
-                    </div>
+                <form id="search-form" class="mb-3">
 
-                    <div class="col-4">
-                        <button type="submit" class="btn btn-light btn-lg" id="current-location">Current Location</button>
-                    </div>
+                    <div class="row">
+                        <div class="col-6">
 
-                    <div class="col-2">
-                        <h1 class="emoji-weather"><i class="fas fa-cloud-sun"> </i></h1>
-                    </div>
-                </div>
-            </form>
+                            <input type="search" class="form-control transparent-input" placeholder="Enter a city"
+                                autocomplete="off" id="city-input"/>
+                        </div>
 
-            <div class="row">
-                <div class="col-sm-4">
-                    <h4 class="humidity">
-                        Precipitation: 
-                        <br />
-                        Wind: 
-                    </h4>
-                </div>
+                        <div class="col-3">
 
-                <div class="col-sm-3">
-                    <h1 class="city-name"></h1>
-                    <h2>
-                        <em id="current-time"></em>
-                        <br />
+                            <input type="submit" value="search" class="form-control transparent-input" id="find"/>
+
+                        </div>
+
+                        <div class="col-3">
+                            
+                            <button class="btn" style="background-color:transparent" id="current-location"><i class="fas fa-map-marker-alt"></i></button>
+                        </div>
                         
-                    </h2>
+                    </div>
+                    
+                </form>
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <h2 class="current-time" id="current-time"></h2>
+
+                    </div>
+                    <div class="col-12">
+
+                        <h1 class="city-name"><i class="fas fa-city"></i></h1>
+
+                    </div>
                 </div>
 
-                <div class="col-sm-5">
-                    <h1 class="degree-celcius">
-                        <span id="temperature"></span>
-                        <span class="units">
-                            <a href="#" class="celsius-link" id="celsius-link"> °C</a><span> | </span>
-                            <a href="#" class="fahrenheit-link" id="fahrenheit-link">°F</a></span>
-                    </h1>
+
+                <div class="row">
+
+                    <div class="col-12">
+                        <ul>
+
+                            <li class="humidity"><i class="fas fa-tint"></i></li>
+                            <li class="wind"><i class="fas fa-wind"></i></li>
+
+                        </ul>
+                       
+                    </div>
                 </div>
+
+                <div class="row">    
+
+                    <div class="col-3">
+
+                        <h1><i class="fas fa-cloud-sun-rain"></i></h1>
+
+                    </div>
+
+                    <div class="col-9">
+
+                        <h1 class="degree-celcius">
+                            <span id="temperature"><i class="fas fa-temperature-high"></i></span>
+                            <span class="units">
+                                <a href="#" class="celsius-link" id="celsius-link"> °C</a><span> | </span>
+                                <a href="#" class="fahrenheit-link" id="fahrenheit-link">°F</a></span>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="row weather-forecast" id="forecast"></div>
             </div>
-
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Tue</h2>
-                            <h1 class="emoji-sun"><i class="fas fa-sun"> </i></h1>
-                            <h3 class="temp">25°C</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Wed</h2>
-                            <h1 class="emoji-cloud-sun">
-                                <i class="fas fa-cloud-sun"> </i>
-                            </h1>
-                            <h3 class="temp">27°C</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Thu</h2>
-                            <h1 class="emojicloud-sun-rain">
-                                <i class="fas fa-cloud-sun-rain"></i>
-                            </h1>
-                            <h3 class="temp">24°C</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Fri</h2>
-                            <h1 class="emoji"><i class="fas fa-sun"> </i></h1>
-                            <h3 class="temp">28°C</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">Sat</h2>
-                            <h1 class="emoji-cloud-showers-heavy">
-                                <i class="fas fa-cloud-showers-heavy"></i>
-                            </h1>
-                            <h3 class="temp">21°C</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <small>
+                <a href="https://github.com/MarGolNZ/my-weather-app" class="footnote" target="_blank">Open-source code by Marina Golovina</a> 
+            </small>
         </div>
-        <a href="https://github.com/MarGolNZ/my-weather-app" class="github-link" target="_blank">My GitHub repository</a>
     </div>
     <script src="src/index.js"></script>
 </body>

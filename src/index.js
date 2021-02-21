@@ -17,64 +17,60 @@ function formatDate(date) {
   if (currentMinutes <10) {
     currentMinutes = `0${currentMinutes}`;
   }
-  return `${currentDay} ${currentHour}:${currentMinutes}`;
+  return `Current time: ${currentDay}, ${currentHour}:${currentMinutes}`;
 }
 
 let displayCurrentTime = document.querySelector("#current-time");
 let now = new Date();
 displayCurrentTime.innerHTML = formatDate(now);
 
-// On your project, when a user searches for a city (example: New York), 
-// it should display the name of the city on the result page and the current temperature of the city.
-
-let cityNameDisplay = document.querySelector("h1.city-name");
+// let cityNameDisplay = document.querySelector("h1.city-name");
 
 
 function showTemperature(response) {
-    console.log(response.data.main.temp);
-    let temperature = Math.round(response.data.main.temp);
+    console.log(response);
+    console.log(response.data.current.temp);
+    let temperature = Math.round(response.data.current.temp);
     let temperatureElement = document.querySelector("#temperature");
+    let cityNameDisplay = document.querySelector("#city-name");
     temperatureElement.innerHTML = temperature;
-    cityNameDisplay.innerHTML = response.data.name;
+    console.log(response.data.timezone);
+    cityNameDisplay.innerHTML = response.data.timezone;
   }
 
-function alertCity(event) {
-  event.preventDefault();
-  console.log("alertCity");
-  let cityName = document.querySelector("#city-input");
-  let apiKey = "8ea9a418f9dd13e967a728a357801a35";
-  let units = "metric";
-  let apiEndPoint = "https://api.openweathermap.org/data/2.5/";
-  let apiUrl = `${apiEndPoint}/weather?q=${cityName.value}&appid=${apiKey}&units=${units}`;
-  console.log(apiUrl)
+// function alertCity(event) {
+//   event.preventDefault();
+//   let cityName = document.querySelector("#city-input");
+//   let apiEndPoint = "https://api.openweathermap.org/data/2.5/";
+//   let apiUrl = `${apiEndPoint}/weather?q=${cityName.value}&appid=8ea9a418f9dd13e967a728a357801a35&units=metric;
+  
+//   axios.get(`${apiUrl}`).then(showTemperature);
 
-  axios.get(`${apiUrl}`).then(showTemperature);
-
-  if (cityName.value) {
-      cityNameDisplay.innerHTML = `${cityName.value}`;
+//   if (cityName.value) {
+//       cityNameDisplay.innerHTML = `${cityName.value}`;
       
-  } else {
-      cityNameDisplay.innerHTML = null;
-      alert("Please type something");
-    }
-}
+//   } else {
+//       cityNameDisplay.innerHTML = null;
+//       alert("Please type something");
 
-let searchCityButton = document.querySelector("#find");
-console.log(searchCityButton)
-searchCityButton.addEventListener("click", alertCity);
+//     }
+//     apiUrl =`https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}&units=metric`;
+//     axios.get(apiUrl).then(displayForecast);
+// }
+
+// let searchCityButton = document.querySelector("#find");
+// searchCityButton.addEventListener("click", alertCity);
 
 
-
-// Add a Current Location button. When clicking on it,
-// it uses the Geolocation API to get your GPS coordinates and display
-// and the city and current temperature using the OpenWeather API.
 
 function handlePosition(position) {
-    let latitude = position.coords.latitude;
-    let longitude = position.coords.longitude;
-    let apiUrlGeo = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=8ea9a418f9dd13e967a728a357801a35&units=metric`;
+    // let latitude = position.lat;
+    // let longitude = position.lon;
+    let apiUrlGeo = "https://api.openweathermap.org/data/2.5/onecall?lat=33.4418&lon=-94.0377&exclude=minutely,hourly,alerts&appid=8ea9a418f9dd13e967a728a357801a35&units=metric";
+
+    console.log(apiUrlGeo);
+
     axios.get(`${apiUrlGeo}`).then(showTemperature);
-    
 }
 
 function getGeoLocation(event) {
@@ -83,5 +79,6 @@ function getGeoLocation(event) {
 }
   
 let searchGeoButton = document.querySelector("#current-location");
-console.log(searchGeoButton);
 searchGeoButton.addEventListener("click", getGeoLocation);
+
+
