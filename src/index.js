@@ -17,15 +17,8 @@ function formatDate(date) {
   if (currentMinutes <10) {
     currentMinutes = `0${currentMinutes}`;
   }
-  return `Current time: ${currentDay}, ${currentHour}:${currentMinutes}`;
+  return `Last updated: ${currentDay}, ${currentHour}:${currentMinutes}`;
 }
-
-let displayCurrentTime = document.querySelector("#current-time");
-let now = new Date();
-displayCurrentTime.innerHTML = formatDate(now);
-
-// let cityNameDisplay = document.querySelector("h1.city-name");
-
 
 function showWeather(response) {
     console.log(response);
@@ -41,6 +34,9 @@ function showWeather(response) {
     let weatherConditionElement = document.querySelector("#weather-icon");
     let description = response.data.current.weather[0].description;
     let weatherDesciptionElement = document.querySelector("#description-value");
+    let dateElement = document.querySelector("#current-time");
+    let now = new Date(response.data.current.dt * 1000);
+    console.log(now);
     temperatureElement.innerHTML = temperature;
     console.log(response.data.timezone);
     cityNameDisplay.innerHTML = response.data.timezone;
@@ -48,6 +44,7 @@ function showWeather(response) {
     humidityElement.innerHTML = `${humidity} %`;
     weatherConditionElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt=""/>`;
     weatherDesciptionElement.innerHTML = `${description}`;
+    dateElement.innerHTML = formatDate(now);
 
   }
 
