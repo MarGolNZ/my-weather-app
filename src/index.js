@@ -39,12 +39,15 @@ function showWeather(response) {
     let humidityElement = document.querySelector("#humidity-value");
     let weatherIcon = response.data.current.weather[0].icon;
     let weatherConditionElement = document.querySelector("#weather-icon");
+    let description = response.data.current.weather[0].description;
+    let weatherDesciptionElement = document.querySelector("#description-value");
     temperatureElement.innerHTML = temperature;
     console.log(response.data.timezone);
     cityNameDisplay.innerHTML = response.data.timezone;
     windElement.innerHTML = `${wind} m/s`;
     humidityElement.innerHTML = `${humidity} %`;
     weatherConditionElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt=""/>`;
+    weatherDesciptionElement.innerHTML = `${description}`;
 
   }
 
