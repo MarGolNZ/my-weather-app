@@ -74,9 +74,10 @@ function showWeather(response) {
 
 
 function handlePosition(position) {
-    // let latitude = position.lat;
-    // let longitude = position.lon;
-    let apiUrlGeo = "https://api.openweathermap.org/data/2.5/onecall?lat=33.4418&lon=-94.0377&exclude=minutely,hourly,alerts&appid=8ea9a418f9dd13e967a728a357801a35&units=metric";
+    console.log(position);
+    let latitude = position.coords.latitude;
+    let longitude = position.coords.longitude;
+    let apiUrlGeo = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=minutely,hourly,alerts&appid=8ea9a418f9dd13e967a728a357801a35&units=metric`;
 
     console.log(apiUrlGeo);
 
