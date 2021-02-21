@@ -55,12 +55,6 @@ li {
   padding: 0 px;
 }
 
-/* .emoji-weather {
-  color: #0e49b5;
-  text-align: end;
-  font-size: 84px;
-} */
-
 .btn {
   transition: all 200ms ease;
   padding: 0;
@@ -81,4 +75,7 @@ a .footnote {
   color: white;
   text-align: center;
   padding: 0;
+}
+.display-temperature {
+  font-size: 34px;
 }

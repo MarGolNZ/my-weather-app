@@ -27,12 +27,13 @@ displayCurrentTime.innerHTML = formatDate(now);
 // let cityNameDisplay = document.querySelector("h1.city-name");
 
 
-function showTemperature(response) {
+function showWeather(response) {
     console.log(response);
     console.log(response.data.current.temp);
     let temperature = Math.round(response.data.current.temp);
     let temperatureElement = document.querySelector("#temperature");
     let cityNameDisplay = document.querySelector("#city-name");
+    let windElement = document.querySelector("#");
     temperatureElement.innerHTML = temperature;
     console.log(response.data.timezone);
     cityNameDisplay.innerHTML = response.data.timezone;
@@ -70,7 +71,7 @@ function handlePosition(position) {
 
     console.log(apiUrlGeo);
 
-    axios.get(`${apiUrlGeo}`).then(showTemperature);
+    axios.get(`${apiUrlGeo}`).then(showWeather);
 }
 
 function getGeoLocation(event) {
