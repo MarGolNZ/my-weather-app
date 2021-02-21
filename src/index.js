@@ -35,10 +35,13 @@ function showWeather(response) {
     let cityNameDisplay = document.querySelector("#city-name");
     let wind = Math.round(response.data.current.wind_speed);
     let windElement = document.querySelector("#wind-value");
+    let humidity = response.data.current.humidity;
+    let humidityElement = document.querySelector("#humidity-value")
     temperatureElement.innerHTML = temperature;
     console.log(response.data.timezone);
     cityNameDisplay.innerHTML = response.data.timezone;
-    windElement.innerHTML = wind;
+    windElement.innerHTML = `${wind} m/s`;
+    humidityElement.innerHTML = `${humidity} %`;
   }
 
 // function alertCity(event) {
