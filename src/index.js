@@ -1,3 +1,6 @@
+let temperatureUnit = "metric";
+
+
 function formatDate(date) {
     let weekDays = [
     "Sunday",
@@ -19,6 +22,7 @@ function formatDate(date) {
   }
   return `Last updated: ${currentDay}, ${currentHour}:${currentMinutes}`;
 }
+
 
 function showTemperature(response) {
   console.log(response.data);
@@ -123,4 +127,15 @@ function getGeoLocation(event) {
 let searchGeoButton = document.querySelector("#current-location");
 searchGeoButton.addEventListener("click", getGeoLocation);
 
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  console.log("convertToFahrenheit");
+  let temperatureDisplay = document.querySelector("#temp-value");
+  let temperatureValue = temperatureDisplay.innerHTML;
+  let convertTemp = Math.round((temperatureValue * 9/5) + 32);
+  temperatureDisplay.innerHTML = convertTemp;
+  
+}
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertToFahrenheit);
