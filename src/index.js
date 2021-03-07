@@ -48,19 +48,21 @@ function showTemperature(response) {
 function alertCity(event) {   
     event.preventDefault();
     let cityNameInput = document.querySelector("#city-input");
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameInput.value}&appid=8ea9a418f9dd13e967a728a357801a35&units=metric`;
-    console.log(apiUrl)
-      
-    axios.get(apiUrl).then(showTemperature);
-
-      if (cityNameInput.value) {
+    
+    
+    if (cityNameInput.value) {
           cityNameInput.innerHTML = `${cityNameInput.value}`;
-          
+          let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityNameInput.value}&appid=8ea9a418f9dd13e967a728a357801a35&units=metric`;
+          console.log(apiUrl)
+          axios.get(apiUrl).then(showTemperature);
       } else {
           cityNameInput.innerHTML = null;
           alert("Please type something");
 
-      }
+      }  
+    
+
+      
 
       
         // apiUrl =`https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}&units=metric`;
