@@ -67,10 +67,7 @@ h2 {
 a .footnote {
   font-size: 14px;
 }
-.units {
-  font-size: 24px;
-  text-decoration: none;
-}
+
 .transparent-input {
   background-color: transparent !important;
   color: white;
@@ -79,4 +76,16 @@ a .footnote {
 }
 .display-temperature {
   font-size: 34px;
+}
+
+.units {
+  font-weight: 600;
+  font-size: 24px;
+}
+.active {
+  text-decoration: none;
+  color: #fff;
+}
+.active:hover {
+  color: #fff;
 }
