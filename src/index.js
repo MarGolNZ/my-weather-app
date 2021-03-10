@@ -125,10 +125,14 @@ searchGeoButton.addEventListener("click", getGeoLocation);
 function convertToFahrenheit(event) {
   event.preventDefault();
   console.log("convertToFahrenheit");
-  let temperatureDisplay = document.querySelector("#temp-value");
-  let temperatureValue = temperatureDisplay.innerHTML;
-  let convertToFahrenheit = Math.round((temperatureValue * 9/5) + 32);
-  temperatureDisplay.innerHTML = convertToFahrenheit;
+  if (temperatureUnit !== "imperial") {
+    temperatureUnit = "imperial";
+    let temperatureDisplay = document.querySelector("#temp-value");
+    let temperatureValue = temperatureDisplay.innerHTML;
+    let convertToFahrenheit = Math.round((temperatureValue * 9/5) + 32);
+    temperatureDisplay.innerHTML = convertToFahrenheit;
+    
+  }
   
 }
 
@@ -138,10 +142,14 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 function convertToCelsius(event) {
   event.preventDefault();
   console.log("convertToCelsius");
-  let temperatureDisplay = document.querySelector("#temp-value");
-  let temperatureValue = temperatureDisplay.innerHTML;
-  let convertToCelsius = Math.round((temperatureValue - 32) * 5/9);
-  temperatureDisplay.innerHTML = convertToCelsius;
+  if (temperatureUnit !== 'metric') {
+    temperatureUnit = "metric";
+    let temperatureDisplay = document.querySelector("#temp-value");
+    let temperatureValue = temperatureDisplay.innerHTML;
+    let convertToCelsius = Math.round((temperatureValue - 32) * 5/9);
+    temperatureDisplay.innerHTML = convertToCelsius; 
+  }
+  
 }
 
 
