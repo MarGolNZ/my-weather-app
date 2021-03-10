@@ -1,6 +1,7 @@
 let temperatureUnit = "metric";
 
 
+
 function formatDate(date) {
     let weekDays = [
     "Sunday",
@@ -65,12 +66,6 @@ function alertCity(event) {
 
       }  
     
-
-      
-
-      
-        // apiUrl =`https://api.openweathermap.org/data/2.5/onecall?q=${city}&appid=${apiKey}&units=metric`;
-        // axios.get(apiUrl).then(displayForecast);
     }
 
   let searchCityButton = document.querySelector("#find");
@@ -132,10 +127,23 @@ function convertToFahrenheit(event) {
   console.log("convertToFahrenheit");
   let temperatureDisplay = document.querySelector("#temp-value");
   let temperatureValue = temperatureDisplay.innerHTML;
-  let convertTemp = Math.round((temperatureValue * 9/5) + 32);
-  temperatureDisplay.innerHTML = convertTemp;
+  let convertToFahrenheit = Math.round((temperatureValue * 9/5) + 32);
+  temperatureDisplay.innerHTML = convertToFahrenheit;
   
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  console.log("convertToCelsius");
+  let temperatureDisplay = document.querySelector("#temp-value");
+  let temperatureValue = temperatureDisplay.innerHTML;
+  let convertToCelsius = Math.round((temperatureValue - 32) * 5/9);
+  temperatureDisplay.innerHTML = convertToCelsius;
+}
+
+
+let celciusLink = document.querySelector("#celsius-link");
+celciusLink.addEventListener("click", convertToCelsius);
