@@ -128,6 +128,8 @@ function convertToFahrenheit(event) {
   if (temperatureUnit !== "imperial") {
     temperatureUnit = "imperial";
     let temperatureDisplay = document.querySelector("#temp-value");
+    fahrenheitLink.classList.add("active");
+    celciusLink.classList.remove("active");
     let temperatureValue = temperatureDisplay.innerHTML;
     let convertToFahrenheit = Math.round((temperatureValue * 9/5) + 32);
     temperatureDisplay.innerHTML = convertToFahrenheit;
@@ -145,9 +147,12 @@ function convertToCelsius(event) {
   if (temperatureUnit !== 'metric') {
     temperatureUnit = "metric";
     let temperatureDisplay = document.querySelector("#temp-value");
+    fahrenheitLink.classList.remove("active");
+    celciusLink.classList.add("active");
     let temperatureValue = temperatureDisplay.innerHTML;
     let convertToCelsius = Math.round((temperatureValue - 32) * 5/9);
     temperatureDisplay.innerHTML = convertToCelsius; 
+
   }
   
 }
