@@ -97,7 +97,7 @@ function showWeather(response) {
     cityNameDisplay.innerHTML = response.data.timezone;
     windElement.innerHTML = `${wind} m/s`;
     humidityElement.innerHTML = `${humidity} %`;
-    weatherConditionElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt=""/>`;
+    weatherConditionElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${weatherIcon}.png" alt=""/>`;
     weatherDesciptionElement.innerHTML = `${description}`;
     dateElement.innerHTML = formatDate(now);
 
